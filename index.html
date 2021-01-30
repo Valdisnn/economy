@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Сайт разработан для защиты практики по предмету <<экономика>>">
+    <meta name="author" content="Журавлев Владислав">
+    <meta name="author" content="Бармин Александр">
+    <link rel="icon" href="./img/icon.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Калькулятор оценки сайта</title>
+</head>
+
+<body>
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+<main class="card">
+    <h1 class="card-head">Стоимость разработки сайта</h1>
+
+    <div class="first-screen">
+        <p class="first-screen_description">
+            Расскажите больше о сайте, который вам нужен, чтобы рассчитать примерную стоимость разработки. Если
+            нужна помощь — напишите нам в ВКонтакте или Телеграм.
+        </p>
+        <p class="first-screen_description">Владислав:
+            <a href="https://vk.com/juravloff" style="color: #dc7522;" target="_blank">https://vk.com/juravloff</a>
+            <br><br> Телеграм:
+            <a href="https://t.me/Valdisnn" style="color: #ff973b;" target="_blank">https://t.me/Valdisnn</a></p>
+        <button class="button start-button">Рассчитать...</button>
+    </div>
+
+    <section class="main-form" style="display: none;">
+        <form class="form-calculate" method="POST" action="server.php" enctype="multipart/form-data">
+
+
+            <fieldset class="first-fieldset">
+                <legend>Какой сайт вам нужен?</legend>
+
+                <p>
+                    <input class="css-radio calc-handler" id="landing" type="radio" name="whichSite" value="landing"
+                           checked data-site="одностраничный сайт">
+                    <label class="label-radio" for="landing">Одностраничный (лендинг)</label>
+                </p>
+
+                <p>
+                    <input class="css-radio calc-handler" id="multiPage" type="radio" name="whichSite"
+                           value="multiPage" data-site="многостраничный сайт">
+                    <label class="label-radio" for="multiPage">Многостраничный (корпоративный)</label>
+                </p>
+
+                <p>
+                    <input class="css-radio calc-handler" id="onlineStore" type="radio" name="whichSite"
+                           value="onlineStore" data-site="интернет магазин">
+                    <label class="label-radio" for="onlineStore">Интернет-магазин</label>
+                </p>
+
+            </fieldset>
+
+            <div class="total_price">
+					<span class="total_price__wrap">
+						<span class="total_price__sum">5000</span>
+						<span class="total_price__val">₽</span>
+					</span>
+            </div>
+
+            <fieldset>
+                <legend>Нужно ли разрабатывать схему сайта?</legend>
+                <label class="switcher">
+                    <input type="checkbox" class="calc-handler" name="option" id="desktopTemplates"
+                           value="desktopTemplates">
+                    <span class="switcher__indicator"></span>
+                    <span class="checkbox-label desktopTemplates_value">Нет</span>
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Адаптировать сайт под смартфоны и&nbsp;планшеты?</legend>
+                <label class="switcher">
+                    <input type="checkbox" class="calc-handler" name="option" id="adapt" value="adapt">
+                    <span class="switcher__indicator"></span>
+                    <span class="checkbox-label adapt_value">Нет</span>
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Нужно ли разрабатывать схему сайта под мобильные устройства?</legend>
+                <label class="switcher">
+                    <input type="checkbox" class="calc-handler" name="option" id="mobileTemplates"
+                           value="mobileTemplates" disabled>
+                    <span class="switcher__indicator"></span>
+                    <span class="checkbox-label mobileTemplates_value">Нет</span>
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Вы хотите самостоятельно менять и добавлять текст на сайте без помощи разработчика?</legend>
+                <label class="switcher">
+                    <input type="checkbox" class="calc-handler" name="option" id="editable" value="editable">
+                    <span class="switcher__indicator"></span>
+                    <span class="checkbox-label editable_value">Нет</span>
+                </label>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Дополнительный функционал для сайта</legend>
+                <p>
+                    <input class="css-check calc-handler" id="metrikaYandex" type="checkbox" name="option"
+                           value="metrikaYandex">
+                    <label class="label-check" for="metrikaYandex">Яндекс Метрика</label>
+                </p>
+
+                <p>
+                    <input class="css-check calc-handler" id="analyticsGoogle" type="checkbox" name="option"
+                           value="analyticsGoogle">
+                    <label class="label-check" for="analyticsGoogle">Гугл Аналитика</label>
+                </p>
+
+                <p>
+                    <input class="css-check calc-handler" id="sendOrder" type="checkbox" name="option"
+                           value="sendOrder">
+                    <label class="label-check" for="sendOrder">Отправка заявок на почту</label>
+                </p>
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Время на разработку сайту</legend>
+
+                <p class="fast-description">Разрабатываем <span class="type-site">одностраничный сайт</span> от
+                    <span class="max-deadline">7 дней</span>. Если вам нужно сделать сайт быстрее, поставьте галочку
+                    ниже и выберите подходящие сроки.
+                </p>
+
+                <label class="switcher">
+                    <input type="checkbox" class="want-faster">
+                    <span class="switcher__indicator"></span><span class="checkbox-label">Хочу быстрее</span>
+                </label>
+
+                <p class="fast-range" style="display: none;">
+                    <label><input type="range" class="range-deadline calc-handler" min="2" max="7" step="1"
+                                  value="7" name="deadline"></label>
+                    <span class="deadline"><span class="deadline-value">7 дней</span>*</span>
+                    <small class="deadline-small">*точные сроки определяются при обсужении технического
+                        задания</small>
+                </p>
+            </fieldset>
+
+            <fieldset class="subtotal">
+                <h2>Примерная стоимость разработки сайта</h2>
+                <p class="calc-description">Сделаем одностраничный сайт, адаптированный под мобильные
+                    устройства и планшеты. Установим панель админстратора, чтобы вы
+                    могли самостоятельно менять содержание на сайте без разработчика.
+                    Подключим Яндекс Метрику, Гугл Аналитику и отправку заявок на почту.
+                </p>
+                <p class="calc-description">
+                    Оставьте заявку, если хотите, чтобы мы разработали сайт. Свяжемся с вами
+                    в течение 2 часов, чтобы обсудить задачу.
+                </p>
+
+                <button class="button end-button" type="button">Отправить заявку</button>
+            </fieldset>
+
+            <fieldset class="total" style="display: none;">
+                <div class="total_area">
+                    <label for="task" class="total_label">Расскажите о задаче</label>
+                    <div class="total_block">
+							<textarea class="total_field" id="task" type="text" name="task" rows="7"
+                                      maxlength="1000"></textarea>
+                        <p><small class="total_small__gray">Что нужно сделать, что вы хотите получить</small></p>
+                    </div>
+                </div>
+
+                <div class="total_area">
+                    <label for="communication" class="total_label">Как с вами связаться</label>
+                    <div class="total_block">
+                        <input id="communication" type="text" class="total_field" name="communication">
+                        <p><small class="total_small__gray">Телефон, Telegram, WhatsApp, email</small></p>
+                    </div>
+                </div>
+
+                <div class="total_area">
+                    <label for="total_field" class="total_label">Имя</label>
+                    <div class="total_block">
+                        <input id="total_field" type="text" class="total_field" name="nameCustomer">
+                    </div>
+                </div>
+
+                <div class="total_submit">
+                    <button type="submit" class="button">Отправить</button>
+                    <p class="total_small">Свяжемся с вами в течение двух часов</p>
+                </div>
+            </fieldset>
+
+        </form>
+    </section>
+    <footer>
+        <small class="footer-small">&copy; 2020 Все права защищены. <a href="./policy.html" class="footer-conf">Политика
+            конфиденциальности</a></small>
+    </footer>
+</main>
+<script src="./js/mainScript.js" defer></script>
+</body>
+
+
+</html>
